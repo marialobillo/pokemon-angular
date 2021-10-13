@@ -7,11 +7,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PokemonService {
 
-  baseUrl: string = environment.base_url;
+  apiUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
-  getPokemons(query: any){
-    return this.http.get<any>(`${this.baseUrl}/pokemon/${query}`);
-  }
+  // getPokemonsList(offset:number, limit: number = 20): Observable<PokemonList[]>
+
+  
 }
