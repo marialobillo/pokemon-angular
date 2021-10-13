@@ -1,0 +1,15 @@
+@import "../../../assets/styles/variables.scss";
+
+mat-toolbar{
+    background-color: $black;
+}
+
+mat-icon{
+    color: $white;
+}
+
+.home {
+    text-decoration: none;
+    color: $white;
+    cursor: pointer;
+}
