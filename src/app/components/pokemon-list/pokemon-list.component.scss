@@ -1,0 +1,23 @@
+@import "../../../assets/styles/variables.scss";
+
+.container{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+table{
+    min-width: 80%;
+    margin: auto;
+}
+
+.mat-header-cell{
+    color: $black;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mat-row:nth-child(even){
+    background-color: $green;
+}
