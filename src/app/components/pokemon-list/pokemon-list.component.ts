@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -18,7 +19,10 @@ export class PokemonListComponent implements OnInit {
 
 
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(
+    private pokemonService: PokemonService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.getPokemons();
@@ -37,7 +41,7 @@ export class PokemonListComponent implements OnInit {
           };
           this.data.push(pokemonData);
           this.dataSource = new MatTableDataSource<any>(this.data);
-          console.log(response);
+          // console.log(response);
         },
         error => {
           console.log(error);
@@ -52,6 +56,21 @@ export class PokemonListComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  getRow(row: any){
+    // console.log(row.name);
+    this.router.navigateByUrl(`pokemons/${row.name}`);
+    // let pokemonData;
+
+    // this.pokemonService.getPokemons(row.name).subscribe(
+    //   response => {
+    //     console.log(response);
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
   }
 
 
