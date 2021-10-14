@@ -15,9 +15,9 @@ export class PokemonListComponent implements OnInit {
   dataSource = new MatTableDataSource<any>(this.data);
 
 
-  pokemons = [];
-
-
+  pokemons: any[] = [];  
+  page: number = 1;
+  totalPokemons: number = 0;
 
   constructor(
     private pokemonService: PokemonService,
@@ -50,6 +50,33 @@ export class PokemonListComponent implements OnInit {
     }
   
   }
+
+  // getPokemons(){
+  //   let pokemonData;
+
+  //   this.pokemonService.getPokemons(5, this.page + 0)
+  //     .subscribe((response: any) => {
+
+  //       this.totalPokemons = response.count; // this is no need it
+  //       response.results.forEach((result: any) => {
+
+  //           this.pokemonService.getPokemonDetails(result.name)
+  //             .subscribe((uniqueResponse: any) => {
+
+  //               this.pokemons.push(uniqueResponse);
+  //               pokemonData = {
+  //                 position: uniqueResponse.id,
+  //                 name: uniqueResponse.name,
+  //                 image: uniqueResponse.sprites.front_default
+  //               }
+  //               this.data.push(pokemonData);
+  //               this.dataSource = new MatTableDataSource<any>(this.data);
+
+  //               console.log(pokemonData);
+  //             });
+  //       });
+  //     });
+  // }
 
 
 
