@@ -15,9 +15,6 @@ export class PokemonService {
     return this.http.get<any>(`${this.apiUrl}/pokemon/${pokemon}`);
   }
 
-  // getPokemons(limit: number, offset: number){
-  //   return this.http.get(`${this.apiUrl}/pokemon?limit=${limit}&offset=${offset}`);
-  // }
-
+  
 
 }
