@@ -31,7 +31,7 @@ export class PokemonListComponent implements OnInit {
   getPokemons(){
     let pokemonData;
 
-    for(let i = 0; i < 150; i++){
+    for(let i = 1; i <= 150; i++){
       this.pokemonService.getPokemons(i).subscribe(
         response => {
           pokemonData = {
@@ -59,18 +59,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   getRow(row: any){
-    // console.log(row.name);
     this.router.navigateByUrl(`pokemons/${row.name}`);
-    // let pokemonData;
-
-    // this.pokemonService.getPokemons(row.name).subscribe(
-    //   response => {
-    //     console.log(response);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
   }
 
 
